@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer-array name="img_id_arr">
+        <item>@drawable/tab_indicator_default</item>
+        <item>@drawable/tab_indicator_selected</item>
+        <item>@drawable/tab_selector</item>
+
+
+    </integer-array></resources>
