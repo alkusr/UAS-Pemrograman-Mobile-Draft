@@ -5,18 +5,22 @@
       <map>
         <entry key="..\:/WeatherNow/app/src/main/res/drawable/img1.xml" value="0.3769230769230769" />
         <entry key="..\:/WeatherNow/app/src/main/res/drawable/notactive.xml" value="0.3769230769230769" />
+        <entry key="..\:/WeatherNow/app/src/main/res/drawable/shape.xml" value="0.3592592592592593" />
         <entry key="..\:/WeatherNow/app/src/main/res/drawable/tab_indicator_default.xml" value="0.3769230769230769" />
         <entry key="..\:/WeatherNow/app/src/main/res/drawable/tab_indicator_selected.xml" value="0.3769230769230769" />
         <entry key="..\:/WeatherNow/app/src/main/res/drawable/tab_selector.xml" value="0.3769230769230769" />
         <entry key="..\:/WeatherNow/app/src/main/res/layout/activity_main.xml" value="0.17831813576494426" />
         <entry key="..\:/WeatherNow/app/src/main/res/layout/hourly_preview.xml" value="0.33" />
-        <entry key="..\:/WeatherNow/app/src/main/res/layout/hours_fragment.xml" value="0.17831813576494426" />
+        <entry key="..\:/WeatherNow/app/src/main/res/layout/hourly_shimmer.xml" value="0.22" />
+        <entry key="..\:/WeatherNow/app/src/main/res/layout/hours_fragment.xml" value="0.1" />
         <entry key="..\:/WeatherNow/app/src/main/res/layout/shimmer_card.xml" value="0.5" />
         <entry key="..\:/WeatherNow/app/src/main/res/layout/shimmer_text.xml" value="0.17831813576494426" />
         <entry key="..\:/WeatherNow/app/src/main/res/layout/shimmer_today.xml" value="0.17831813576494426" />
         <entry key="..\:/WeatherNow/app/src/main/res/layout/today_fragment.xml" value="0.33" />
         <entry key="..\:/WeatherNow/app/src/main/res/layout/weather_preview.xml" value="0.33" />
         <entry key="..\:/WeatherNow/app/src/main/res/layout/week_fragment.xml" value="0.17831813576494426" />
+        <entry key="..\:/WeatherNow/app/src/main/res/layout/weekly_preview.xml" value="0.22" />
+        <entry key="..\:/WeatherNow/app/src/main/res/layout/weekly_shimmer.xml" value="0.5" />
       </map>
     </option>
   </component>

@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="deploymentTargetDropDown">
-    <targetSelectedWithDropDown>
+    <runningDeviceTargetSelectedWithDropDown>
       <Target>
-        <type value="BOOT_WITH_SNAPSHOT_TARGET" />
+        <type value="RUNNING_DEVICE_TARGET" />
         <deviceKey>
           <Key>
-            <type value="VIRTUAL_DEVICE_PATH" />
-            <value value="C:\Users\20115\.android\avd\Pixel_4_XL_API_28.avd" />
+            <type value="SERIAL_NUMBER" />
+            <value value="192.168.1.5:5555" />
           </Key>
         </deviceKey>
-        <snapshotKey value="C:\Users\20115\.android\avd\Pixel_4_XL_API_28.avd\snapshots\snap_2022-01-18_14-23-52" />
       </Target>
-    </targetSelectedWithDropDown>
-    <timeTargetWasSelectedWithDropDown value="2022-01-30T12:49:32.140521600Z" />
+    </runningDeviceTargetSelectedWithDropDown>
+    <timeTargetWasSelectedWithDropDown value="2022-01-30T22:10:24.067850900Z" />
   </component>
 </project>

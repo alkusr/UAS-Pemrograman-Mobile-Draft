@@ -88,10 +88,8 @@ class Hours : Fragment(R.layout.hours_fragment) {
 
                         activity?.runOnUiThread {
                             hourlyAdpter.notifyDataSetChanged()
-
-                            //  binding?.shimmerEffect?.visibility = View.GONE
-                            //  binding?.currentLayout?.visibility = View.VISIBLE
-                            //  updatingUI(currentWeather)
+                            binding?.hourlyShimmer?.visibility = View.GONE
+                            binding?.hourlyLayout?.visibility = View.VISIBLE
                         }
 
 
@@ -104,7 +102,7 @@ class Hours : Fragment(R.layout.hours_fragment) {
     }
 
     fun rvSetup() {
-        hourlyAdpter = HourlyAdapter(weatherList)
+        hourlyAdpter = HourlyAdapter(weatherList, context!!)
         hourlyRV.adapter = hourlyAdpter
         hourlyRV.setHasFixedSize(true)
         hourlyRV.layoutManager = LinearLayoutManager(context)

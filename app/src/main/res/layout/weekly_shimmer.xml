@@ -10,55 +10,60 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="160dp"
+            android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/weeklyDate"
-                android:layout_width="wrap_content"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:text="Friday"
-                android:textColor="@color/white"
+                android:background="@drawable/shape"
                 android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/weeklyDesc"
-                android:layout_width="wrap_content"
+                android:layout_width="75dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
-                android:text="Sky is Clear" />
+                android:background="@drawable/shape" />
         </LinearLayout>
+
+        <Space
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape" />
 
         <ImageView
             android:id="@+id/weeklyIcon"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_margin="4dp" />
+            android:layout_margin="4dp"
+            android:background="@drawable/shape" />
 
         <Space
-            android:layout_width="32dp"
-            android:layout_height="wrap_content" />
+            android:layout_width="64dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape" />
 
         <TextView
             android:id="@+id/weeklyMax"
-            android:layout_width="wrap_content"
+            android:layout_width="51dp"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
+            android:background="@drawable/shape"
             android:gravity="center"
-            android:text="18 °C"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
         <TextView
-            android:id="@+id/weeklyMin"
-            android:layout_width="wrap_content"
+            android:layout_width="37dp"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
+            android:background="@drawable/shape"
             android:gravity="center"
-            android:text="8 °C"
             android:textSize="16sp" />
     </LinearLayout>
 

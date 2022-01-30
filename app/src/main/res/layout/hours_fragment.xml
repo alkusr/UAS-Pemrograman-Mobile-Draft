@@ -5,19 +5,69 @@
     android:background="@drawable/background"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/textView16"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="Hourly forcast"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        android:textStyle="bold" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/hourlyRv"
+    <LinearLayout
+        android:id="@+id/hourlyLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="8dp" />
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="Hourly forcast"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/hourlyRv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp" />
+
+    </LinearLayout>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/hourlyShimmer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <include layout="@layout/hourly_shimmer"   />
+            <include layout="@layout/hourly_shimmer"   />
+
+            <include
+                layout="@layout/hourly_shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                layout="@layout/hourly_shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                layout="@layout/hourly_shimmer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include layout="@layout/hourly_shimmer"   />
+            <include layout="@layout/hourly_shimmer"   />
+            <include layout="@layout/hourly_shimmer"   />
+            <include layout="@layout/hourly_shimmer"   />
+            <include layout="@layout/hourly_shimmer"   />
+            <include layout="@layout/hourly_shimmer"   />
+            <include layout="@layout/hourly_shimmer"   />
+            <include layout="@layout/hourly_shimmer"   />
+            <include layout="@layout/hourly_shimmer"   />
+            <include layout="@layout/hourly_shimmer"   />
+
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
 </LinearLayout>
