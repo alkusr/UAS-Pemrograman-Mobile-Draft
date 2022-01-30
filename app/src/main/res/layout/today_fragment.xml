@@ -12,8 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="gone"
-        tools:visibility="visible">
+        android:visibility="gone">
 
         <Space
             android:layout_width="match_parent"
@@ -28,22 +27,6 @@
             android:textColor="@color/black"
             android:textSize="48sp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="16dp" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="🌧️"
-            android:textAlignment="center"
-            android:textSize="96sp" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="16dp" />
-
         <TextView
             android:id="@+id/TvCurrentTemp"
             android:layout_width="match_parent"
@@ -52,6 +35,24 @@
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="48sp" />
+
+        <ImageView
+            android:id="@+id/imgIcon"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/TvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="rainy"
+            android:textAlignment="center"
+            android:textColor="@color/white" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="32dp" />
 
         <Space
             android:layout_width="match_parent"
@@ -86,7 +87,8 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
                         android:text="🌅"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/textViaew6"
@@ -95,7 +97,7 @@
                         android:layout_margin="8dp"
                         android:text="Sunrise"
                         android:textAlignment="center"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textStyle="bold" />
 
                     <TextView
@@ -128,7 +130,8 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
                         android:text="🌇"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/textaView6"
@@ -137,7 +140,7 @@
                         android:layout_margin="8dp"
                         android:text="Sunset"
                         android:textAlignment="center"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textStyle="bold" />
 
                     <TextView
@@ -170,21 +173,22 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="🌅"
-                        android:textAlignment="center" />
+                        android:text="💨"
+                        android:textAlignment="center"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/textVeiew6"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="Sunrise"
+                        android:text="Wind"
                         android:textAlignment="center"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textVieqw5"
+                        android:id="@+id/TvWind"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
@@ -213,19 +217,21 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="🌅"
-                        android:textAlignment="center" />
+                        android:text="💧"
+                        android:textAlignment="center"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="Sunrise"
+                        android:text="humidity"
                         android:textAlignment="center"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/Tvhumidity"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
@@ -253,19 +259,21 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="🌅"
-                        android:textAlignment="center" />
+                        android:text="🌡"
+                        android:textAlignment="center"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="Sunrise"
+                        android:text="Pressure"
                         android:textAlignment="center"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textStyle="bold" />
 
                     <TextView
+                        android:id="@+id/TvPressure"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
@@ -295,7 +303,8 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
                         android:text="🌅"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:textSize="16sp" />
 
                     <TextView
                         android:id="@+id/textView6"
@@ -304,7 +313,7 @@
                         android:layout_margin="8dp"
                         android:text="Sunrise"
                         android:textAlignment="center"
-                        android:textColor="@color/black"
+                        android:textColor="@color/white"
                         android:textStyle="bold" />
 
                     <TextView
@@ -331,7 +340,49 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <include layout="@layout/shimmer_text"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="visible"
+                tools:visibility="visible">
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp" />
+
+                <ProgressBar
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="48sp" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:textAlignment="center" />
+
+                <ProgressBar
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:textAlignment="center" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp" />
+
+            </LinearLayout>
 
             <androidx.gridlayout.widget.GridLayout
                 android:layout_width="wrap_content"

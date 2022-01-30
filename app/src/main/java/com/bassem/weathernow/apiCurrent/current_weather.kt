@@ -1,4 +1,4 @@
-package com.bassem.weathernow.api
+package com.bassem.weathernow.apiCurrent
 
 data class current_weather(
     val base: String,

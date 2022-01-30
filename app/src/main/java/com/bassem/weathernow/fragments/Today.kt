@@ -8,11 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bassem.weathernow.R
-import com.bassem.weathernow.api.current_weather
+import com.bassem.weathernow.apiCurrent.current_weather
 import com.bassem.weathernow.databinding.TodayFragmentBinding
+import com.bumptech.glide.Glide
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import okhttp3.*
 import pub.devrel.easypermissions.EasyPermissions
@@ -135,8 +135,16 @@ class Today : Fragment(R.layout.today_fragment), EasyPermissions.PermissionCallb
     }
     fun updatingUI(currentWeather:current_weather){
         binding?.TvcityName?.text=currentWeather.name
-        binding?.TvCurrentTemp?.text= "${currentWeather.main.temp} °C"
+        binding?.TvCurrentTemp?.text= "${currentWeather.main.temp.toInt()} °C"
         binding?.TvSunRise?.text= currentWeather.sys.sunrise.toString()
+        binding?.TvSunSet?.text=currentWeather.sys.sunset.toString()
+        binding?.TvDescription?.text=currentWeather.weather[0].description
+        binding?.TvWind?.text="${currentWeather.wind.speed.toString()} Km/h"
+        binding?.Tvhumidity?.text="${currentWeather.main.humidity} %"
+        binding?.TvPressure?.text="${currentWeather.main.pressure}"
+        val iconCode=currentWeather.weather[0].icon
+        val iconUrl="https://openweathermap.org/img/w/$iconCode.png"
+        Glide.with(this).load(iconUrl).into(binding?.imgIcon!!)
 
     }
 }
