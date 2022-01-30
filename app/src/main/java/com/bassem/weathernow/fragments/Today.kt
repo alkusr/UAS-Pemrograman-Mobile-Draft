@@ -2,6 +2,8 @@ package com.bassem.weathernow.fragments
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +12,7 @@ import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.bassem.weathernow.R
-import com.bassem.weathernow.apiCurrent.current_weather
+import com.bassem.weathernow.api.apiCurrent.current_weather
 import com.bassem.weathernow.databinding.TodayFragmentBinding
 import com.bumptech.glide.Glide
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -78,7 +80,7 @@ class Today : Fragment(R.layout.today_fragment), EasyPermissions.PermissionCallb
         fusedlocation.lastLocation.addOnSuccessListener {
             val lat = it.latitude.toString()
             val long = it.longitude.toString()
-            println("$lat ///////////////////// $long")
+            saveLocation(lat, long)
             getCurrentWeather(lat, long)
         }
 
@@ -150,10 +152,18 @@ class Today : Fragment(R.layout.today_fragment), EasyPermissions.PermissionCallb
         binding?.TvWind?.text = "${currentWeather.wind.speed} Km/h"
         binding?.Tvhumidity?.text = "${currentWeather.main.humidity} %"
         binding?.TvPressure?.text = "${currentWeather.main.pressure}"
-        binding?.TvFeel?.text="${currentWeather.main.feels_like.toInt()} °C"
+        binding?.TvFeel?.text = "${currentWeather.main.feels_like.toInt()} °C"
         val iconCode = currentWeather.weather[0].icon
         val iconUrl = "https://openweathermap.org/img/w/$iconCode.png"
         Glide.with(this).load(iconUrl).into(binding?.imgIcon!!)
 
+    }
+
+    fun saveLocation(lat: String, long: String) {
+        val sharedPreferences = activity?.getSharedPreferences("PREF", Context.MODE_PRIVATE)
+        val editor = sharedPreferences?.edit()
+        editor?.putString("lat", lat)
+        editor?.putString("long", long)
+        editor?.commit()
     }
 }
