@@ -12,7 +12,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="gone">
+        android:visibility="gone"
+        tools:visibility="visible">
 
         <Space
             android:layout_width="match_parent"
@@ -302,7 +303,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="🌅"
+                        android:text="✔️"
                         android:textAlignment="center"
                         android:textSize="16sp" />
 
@@ -311,13 +312,13 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="Sunrise"
+                        android:text="Feels like"
                         android:textAlignment="center"
                         android:textColor="@color/white"
                         android:textStyle="bold" />
 
                     <TextView
-                        android:id="@+id/textView5"
+                        android:id="@+id/TvFeel"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"

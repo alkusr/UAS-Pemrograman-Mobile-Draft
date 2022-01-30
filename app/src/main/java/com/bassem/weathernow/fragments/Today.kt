@@ -2,10 +2,12 @@ package com.bassem.weathernow.fragments
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import com.bassem.weathernow.R
 import com.bassem.weathernow.apiCurrent.current_weather
@@ -17,6 +19,8 @@ import com.google.gson.GsonBuilder
 import okhttp3.*
 import pub.devrel.easypermissions.EasyPermissions
 import java.io.IOException
+import java.time.Instant
+import java.time.ZoneId
 
 
 class Today : Fragment(R.layout.today_fragment), EasyPermissions.PermissionCallbacks {
@@ -81,7 +85,8 @@ class Today : Fragment(R.layout.today_fragment), EasyPermissions.PermissionCallb
     }
 
     override fun onPermissionsGranted(requestCode: Int, perms: MutableList<String>) {
-        getLocation()
+        //getLocation()
+        checkPermission()
     }
 
     override fun onPermissionsDenied(requestCode: Int, perms: MutableList<String>) {
@@ -101,6 +106,7 @@ class Today : Fragment(R.layout.today_fragment), EasyPermissions.PermissionCallb
                     println(e.message)
                 }
 
+                @RequiresApi(Build.VERSION_CODES.O)
                 override fun onResponse(call: Call, response: Response) {
                     var result: String? = null
                     if (!response.isSuccessful) {
@@ -113,17 +119,11 @@ class Today : Fragment(R.layout.today_fragment), EasyPermissions.PermissionCallb
                         }
                         val gson = GsonBuilder().create()
                         val currentWeather = gson.fromJson(result, current_weather::class.java)
-                       activity?.runOnUiThread {
-
-
-                           binding?.shimmerEffect?.visibility=View.GONE
-                           binding?.currentLayout?.visibility=View.VISIBLE
-                           updatingUI(currentWeather)
-
-
-
-                       }
-
+                        activity?.runOnUiThread {
+                            binding?.shimmerEffect?.visibility = View.GONE
+                            binding?.currentLayout?.visibility = View.VISIBLE
+                            updatingUI(currentWeather)
+                        }
 
 
                     }
@@ -133,17 +133,26 @@ class Today : Fragment(R.layout.today_fragment), EasyPermissions.PermissionCallb
         }).start()
 
     }
-    fun updatingUI(currentWeather:current_weather){
-        binding?.TvcityName?.text=currentWeather.name
-        binding?.TvCurrentTemp?.text= "${currentWeather.main.temp.toInt()} °C"
-        binding?.TvSunRise?.text= currentWeather.sys.sunrise.toString()
-        binding?.TvSunSet?.text=currentWeather.sys.sunset.toString()
-        binding?.TvDescription?.text=currentWeather.weather[0].description
-        binding?.TvWind?.text="${currentWeather.wind.speed.toString()} Km/h"
-        binding?.Tvhumidity?.text="${currentWeather.main.humidity} %"
-        binding?.TvPressure?.text="${currentWeather.main.pressure}"
-        val iconCode=currentWeather.weather[0].icon
-        val iconUrl="https://openweathermap.org/img/w/$iconCode.png"
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    fun updatingUI(currentWeather: current_weather) {
+        binding?.TvcityName?.text = currentWeather.name
+        binding?.TvCurrentTemp?.text = "${currentWeather.main.temp.toInt()} °C"
+        val sunRiseSeconds: Int = currentWeather.sys.sunrise
+        binding?.TvSunRise?.text =
+            Instant.ofEpochSecond(sunRiseSeconds.toLong()).atZone(ZoneId.systemDefault())
+                .toLocalTime().toString()
+        val sunSetSeconds: Int = currentWeather.sys.sunset
+        binding?.TvSunSet?.text =
+            Instant.ofEpochSecond(sunSetSeconds.toLong()).atZone(ZoneId.systemDefault())
+                .toLocalTime().toString()
+        binding?.TvDescription?.text = currentWeather.weather[0].description
+        binding?.TvWind?.text = "${currentWeather.wind.speed} Km/h"
+        binding?.Tvhumidity?.text = "${currentWeather.main.humidity} %"
+        binding?.TvPressure?.text = "${currentWeather.main.pressure}"
+        binding?.TvFeel?.text="${currentWeather.main.feels_like.toInt()} °C"
+        val iconCode = currentWeather.weather[0].icon
+        val iconUrl = "https://openweathermap.org/img/w/$iconCode.png"
         Glide.with(this).load(iconUrl).into(binding?.imgIcon!!)
 
     }
