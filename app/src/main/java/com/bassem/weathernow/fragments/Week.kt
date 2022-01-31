@@ -12,8 +12,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bassem.weathernow.R
 import com.bassem.weathernow.adapters.WeeklyAdapter
-import com.bassem.weathernow.api.weekly.Daily
-import com.bassem.weathernow.api.weekly.WeeklyxxWeather
+import com.bassem.weathernow.api.apiWeekly.Daily
+import com.bassem.weathernow.api.apiWeekly.WeeklyxxWeather
 import com.bassem.weathernow.databinding.WeekFragmentBinding
 import com.google.gson.GsonBuilder
 import okhttp3.*

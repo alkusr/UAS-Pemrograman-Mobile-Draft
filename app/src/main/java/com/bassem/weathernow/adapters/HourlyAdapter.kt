@@ -14,6 +14,8 @@ import com.bassem.weathernow.api.apiHourly.Hourly
 import com.bumptech.glide.Glide
 import java.time.Instant
 import java.time.ZoneId
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 class HourlyAdapter(val weatherList: MutableList<Hourly>,val context:Context) :
     RecyclerView.Adapter<HourlyAdapter.ViewHolder>() {
@@ -37,8 +39,12 @@ class HourlyAdapter(val weatherList: MutableList<Hourly>,val context:Context) :
         val timeMill = weather.dt
         val iconCode=weather.weather[0].icon
         val iconUrl = "https://openweathermap.org/img/w/$iconCode.png"
+        val locale = Locale.US
 
-        val formatedTime = Instant.ofEpochSecond(timeMill.toLong()).atZone(ZoneId.systemDefault()).toLocalTime().toString()
+        val timeFormater = DateTimeFormatter.ofPattern("hh:mm a", locale)
+
+
+        val formatedTime = Instant.ofEpochSecond(timeMill.toLong()).atZone(ZoneId.systemDefault()).format(timeFormater)
         holder.time.text = formatedTime.toString()
         holder.temp.text = "${weather.temp.toInt()} °C"
         Glide.with(context).load(iconUrl).into(holder.icon)

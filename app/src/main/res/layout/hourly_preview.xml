@@ -19,6 +19,7 @@
             android:layout_weight=".33"
             android:text="10:00 PM"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:textSize="20sp" />
 
         <ImageView
@@ -38,6 +39,7 @@
             android:layout_weight=".33"
             android:text="18 °C"
             android:textAlignment="center"
+            android:textColor="@color/white"
             android:textSize="20sp" />
     </LinearLayout>
 

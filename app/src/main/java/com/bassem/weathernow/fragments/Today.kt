@@ -21,8 +21,12 @@ import com.google.gson.GsonBuilder
 import okhttp3.*
 import pub.devrel.easypermissions.EasyPermissions
 import java.io.IOException
+import java.text.SimpleDateFormat
 import java.time.Instant
+import java.time.LocalDateTime
 import java.time.ZoneId
+import java.time.format.DateTimeFormatter
+import java.util.*
 
 
 class Today : Fragment(R.layout.today_fragment), EasyPermissions.PermissionCallbacks {
@@ -46,6 +50,10 @@ class Today : Fragment(R.layout.today_fragment), EasyPermissions.PermissionCallb
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         checkPermission()
+        binding?.swipe?.setOnRefreshListener {
+            getLocation()
+
+        }
 
     }
 
@@ -125,6 +133,8 @@ class Today : Fragment(R.layout.today_fragment), EasyPermissions.PermissionCallb
                             binding?.shimmerEffect?.visibility = View.GONE
                             binding?.currentLayout?.visibility = View.VISIBLE
                             updatingUI(currentWeather)
+                            binding?.swipe?.isRefreshing=false
+
                         }
 
 
@@ -138,21 +148,31 @@ class Today : Fragment(R.layout.today_fragment), EasyPermissions.PermissionCallb
 
     @RequiresApi(Build.VERSION_CODES.O)
     fun updatingUI(currentWeather: current_weather) {
+        println("Update")
+        val locale = Locale.US
+        val sdf = DateTimeFormatter.ofPattern("dd-MM-yyyy hh:mm:ss a", locale)
+        val timeFormater = DateTimeFormatter.ofPattern("hh:mm a", locale)
+
         binding?.TvcityName?.text = currentWeather.name
         binding?.TvCurrentTemp?.text = "${currentWeather.main.temp.toInt()} °C"
         val sunRiseSeconds: Int = currentWeather.sys.sunrise
         binding?.TvSunRise?.text =
-            Instant.ofEpochSecond(sunRiseSeconds.toLong()).atZone(ZoneId.systemDefault())
-                .toLocalTime().toString()
+            Instant.ofEpochSecond(sunRiseSeconds.toLong()).atZone(ZoneId.systemDefault()).format(timeFormater).toString()
         val sunSetSeconds: Int = currentWeather.sys.sunset
         binding?.TvSunSet?.text =
-            Instant.ofEpochSecond(sunSetSeconds.toLong()).atZone(ZoneId.systemDefault())
-                .toLocalTime().toString()
+            Instant.ofEpochSecond(sunSetSeconds.toLong()).atZone(ZoneId.systemDefault()).format(timeFormater).toString()
         binding?.TvDescription?.text = currentWeather.weather[0].description
         binding?.TvWind?.text = "${currentWeather.wind.speed} Km/h"
         binding?.Tvhumidity?.text = "${currentWeather.main.humidity} %"
         binding?.TvPressure?.text = "${currentWeather.main.pressure}"
         binding?.TvFeel?.text = "${currentWeather.main.feels_like.toInt()} °C"
+
+
+        val timeStamp=currentWeather.dt
+        val formatedTime = Instant.ofEpochSecond(timeStamp.toLong()).atZone(ZoneId.systemDefault()).format(sdf)
+        val displayedUpdate = formatedTime
+        println(displayedUpdate)
+        binding?.TvLastUpdate?.text=formatedTime.toString()
         val iconCode = currentWeather.weather[0].icon
         val iconUrl = "https://openweathermap.org/img/w/$iconCode.png"
         Glide.with(this).load(iconUrl).into(binding?.imgIcon!!)
