@@ -95,8 +95,7 @@ class Today : Fragment(R.layout.today_fragment), EasyPermissions.PermissionCallb
     }
 
     override fun onPermissionsGranted(requestCode: Int, perms: MutableList<String>) {
-        //getLocation()
-        checkPermission()
+        getLocation()
     }
 
     override fun onPermissionsDenied(requestCode: Int, perms: MutableList<String>) {
