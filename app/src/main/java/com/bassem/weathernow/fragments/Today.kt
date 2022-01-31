@@ -148,9 +148,8 @@ class Today : Fragment(R.layout.today_fragment), EasyPermissions.PermissionCallb
 
     @RequiresApi(Build.VERSION_CODES.O)
     fun updatingUI(currentWeather: current_weather) {
-        println("Update")
         val locale = Locale.US
-        val sdf = DateTimeFormatter.ofPattern("dd-MM-yyyy hh:mm:ss a", locale)
+        val sdf = DateTimeFormatter.ofPattern("dd-MM-yyyy hh:mm a", locale)
         val timeFormater = DateTimeFormatter.ofPattern("hh:mm a", locale)
 
         binding?.TvcityName?.text = currentWeather.name
@@ -166,8 +165,6 @@ class Today : Fragment(R.layout.today_fragment), EasyPermissions.PermissionCallb
         binding?.Tvhumidity?.text = "${currentWeather.main.humidity} %"
         binding?.TvPressure?.text = "${currentWeather.main.pressure}"
         binding?.TvFeel?.text = "${currentWeather.main.feels_like.toInt()} °C"
-
-
         val timeStamp=currentWeather.dt
         val formatedTime = Instant.ofEpochSecond(timeStamp.toLong()).atZone(ZoneId.systemDefault()).format(sdf)
         val displayedUpdate = formatedTime
@@ -184,6 +181,6 @@ class Today : Fragment(R.layout.today_fragment), EasyPermissions.PermissionCallb
         val editor = sharedPreferences?.edit()
         editor?.putString("lat", lat)
         editor?.putString("long", long)
-        editor?.commit()
+        editor?.apply()
     }
 }

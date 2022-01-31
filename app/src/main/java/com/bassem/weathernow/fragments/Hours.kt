@@ -17,6 +17,7 @@ import com.bassem.weathernow.api.apiHourly.Hourly
 import com.bassem.weathernow.api.apiHourly.HourlyWeather
 import com.bassem.weathernow.databinding.HoursFragmentBinding
 import com.google.gson.GsonBuilder
+import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
 import okhttp3.*
 import java.io.IOException
 
@@ -29,6 +30,7 @@ class Hours : Fragment(R.layout.hours_fragment) {
     lateinit var hourlyRV: RecyclerView
     lateinit var weatherList: MutableList<Hourly>
     lateinit var hourlyAdpter: HourlyAdapter
+    var dots : DotsIndicator?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,6 +55,7 @@ class Hours : Fragment(R.layout.hours_fragment) {
         rvSetup()
 
         getCurrentWeather(lat, long)
+        dots=view.findViewById(R.id.dots_indicator)
     }
 
     fun getCurrentWeather(lat: String, long: String) {
@@ -103,9 +106,24 @@ class Hours : Fragment(R.layout.hours_fragment) {
 
     fun rvSetup() {
         hourlyAdpter = HourlyAdapter(weatherList, context!!)
-        hourlyRV.adapter = hourlyAdpter
-        hourlyRV.setHasFixedSize(true)
-        hourlyRV.layoutManager = LinearLayoutManager(context)
+        hourlyRV.apply {
+            adapter = hourlyAdpter
+            setHasFixedSize(true)
+            layoutManager = LinearLayoutManager(context)
+            addOnScrollListener(object : RecyclerView.OnScrollListener() {
+                override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                    super.onScrollStateChanged(recyclerView, newState)
+                    println("Scrolling. State......")
+                    dots?.visibility=View.INVISIBLE
+                }
+
+                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                    super.onScrolled(recyclerView, dx, dy)
+                    println("Scrolling.......")
+                    dots?.visibility=View.INVISIBLE
+                }
+            })
+            }
+        }
     }
 
-}
