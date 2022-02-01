@@ -30,7 +30,7 @@ import java.time.format.DateTimeFormatter
 import java.util.*
 
 
-class Today : Fragment(R.layout.today_fragment), EasyPermissions.PermissionCallbacks {
+class Today : Fragment(R.layout.today_fragment) {
     var _binding: TodayFragmentBinding? = null
     val binding get() = _binding
     lateinit var fusedlocation: FusedLocationProviderClient
@@ -50,38 +50,13 @@ class Today : Fragment(R.layout.today_fragment), EasyPermissions.PermissionCallb
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        checkPermission()
+        getLocation()
         binding?.swipe?.setOnRefreshListener {
             getLocation()
 
         }
 
     }
-
-    fun hasPermission() =
-        EasyPermissions.hasPermissions(context!!, Manifest.permission.ACCESS_FINE_LOCATION)
-
-    fun requestPermission() {
-        println("REQ============")
-        EasyPermissions.requestPermissions(
-            this,
-            "Weather now needs to access location",
-            101,
-            Manifest.permission.ACCESS_FINE_LOCATION
-        )
-    }
-
-    fun checkPermission() {
-        if (!hasPermission()) {
-            requestPermission()
-            println("REQUEST")
-        } else {
-            getLocation()
-
-        }
-
-    }
-
 
     @SuppressLint("MissingPermission")
     fun getLocation() {
@@ -93,14 +68,6 @@ class Today : Fragment(R.layout.today_fragment), EasyPermissions.PermissionCallb
             getCurrentWeather(lat, long)
         }
 
-    }
-
-    override fun onPermissionsGranted(requestCode: Int, perms: MutableList<String>) {
-        getLocation()
-    }
-
-    override fun onPermissionsDenied(requestCode: Int, perms: MutableList<String>) {
-        TODO("Not yet implemented")
     }
 
     fun getCurrentWeather(lat: String, long: String) {
