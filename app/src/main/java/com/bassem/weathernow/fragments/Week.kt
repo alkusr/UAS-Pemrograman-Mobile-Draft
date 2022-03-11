@@ -33,8 +33,8 @@ class Week : Fragment(R.layout.week_fragment) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val sharedPreferences = activity?.getSharedPreferences("PREF", Context.MODE_PRIVATE)
-        lat = sharedPreferences?.getString("lat", "")!!
-        long = sharedPreferences.getString("lat", "")!!
+        lat = sharedPreferences?.getString("lat", "30.0444")!!
+        long = sharedPreferences.getString("lat", "31.2357")!!
 
     }
 

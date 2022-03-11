@@ -56,11 +56,18 @@ class Today : Fragment(R.layout.today_fragment) {
     fun getLocation() {
         fusedlocation = LocationServices.getFusedLocationProviderClient(requireContext())
         fusedlocation.lastLocation.addOnSuccessListener {
-            val lat = it.latitude.toString()
-            val long = it.longitude.toString()
-            saveLocation(lat, long)
-            // getCurrentWeather(lat, long)
-            getCurrentWeather(lat, long)
+            if (it != null) {
+                val lat = it.latitude.toString()
+                val long = it.longitude.toString()
+                saveLocation(lat, long)
+                getCurrentWeather(lat, long)
+            } else {
+                val sharedPreferences = activity?.getSharedPreferences("PREF", Context.MODE_PRIVATE)
+                val lat = sharedPreferences?.getString("lat", "30.0444")!!
+                val long = sharedPreferences.getString("lat", "31.2357")!!
+                getCurrentWeather(lat, long)
+            }
+
         }
 
     }
