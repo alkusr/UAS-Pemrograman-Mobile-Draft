@@ -48,6 +48,7 @@ class Today : Fragment(R.layout.today_fragment) {
         binding?.swipe?.setOnRefreshListener {
             getLocation()
 
+
         }
 
     }
@@ -59,12 +60,18 @@ class Today : Fragment(R.layout.today_fragment) {
             if (it != null) {
                 val lat = it.latitude.toString()
                 val long = it.longitude.toString()
+                println("$lat==============$long")
+                //31.0465165==============30.4793496 real
+                //31.0465165==============31.0465165 shared
+
+
                 saveLocation(lat, long)
                 getCurrentWeather(lat, long)
             } else {
                 val sharedPreferences = activity?.getSharedPreferences("PREF", Context.MODE_PRIVATE)
                 val lat = sharedPreferences?.getString("lat", "30.0444")!!
-                val long = sharedPreferences.getString("lat", "31.2357")!!
+                val long = sharedPreferences.getString("long", "31.2357")!!
+                println("$lat==============$long")
                 getCurrentWeather(lat, long)
             }
 
@@ -135,4 +142,5 @@ class Today : Fragment(R.layout.today_fragment) {
         })
 
     }
+
 }

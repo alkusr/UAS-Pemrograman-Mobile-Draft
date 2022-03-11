@@ -34,7 +34,7 @@ class Week : Fragment(R.layout.week_fragment) {
         super.onCreate(savedInstanceState)
         val sharedPreferences = activity?.getSharedPreferences("PREF", Context.MODE_PRIVATE)
         lat = sharedPreferences?.getString("lat", "30.0444")!!
-        long = sharedPreferences.getString("lat", "31.2357")!!
+        long = sharedPreferences.getString("long", "31.2357")!!
 
     }
 
