@@ -22,8 +22,13 @@
         <entry key="..\:/WeatherNow/app/src/main/res/layout/weekly_preview.xml" value="0.22" />
         <entry key="..\:/WeatherNow/app/src/main/res/layout/weekly_shimmer.xml" value="0.5" />
         <entry key="..\:/WeatherNoww/app/src/main/res/drawable/shape.xml" value="0.22135416666666666" />
+        <entry key="..\:/WeatherNoww/app/src/main/res/layout/activity_main.xml" value="0.20425724637681159" />
         <entry key="..\:/WeatherNoww/app/src/main/res/layout/activity_splash.xml" value="0.22192028985507245" />
+        <entry key="..\:/WeatherNoww/app/src/main/res/layout/hourly_preview.xml" value="0.24139492753623187" />
         <entry key="..\:/WeatherNoww/app/src/main/res/layout/hourly_shimmer.xml" value="0.19746376811594202" />
+        <entry key="..\:/WeatherNoww/app/src/main/res/layout/hours_fragment.xml" value="0.24139492753623187" />
+        <entry key="..\:/WeatherNoww/app/src/main/res/layout/today_fragment.xml" value="0.2463768115942029" />
+        <entry key="..\:/WeatherNoww/app/src/main/res/layout/weekly_shimmer.xml" value="0.22192028985507245" />
       </map>
     </option>
   </component>

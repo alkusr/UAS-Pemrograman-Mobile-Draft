@@ -12,8 +12,9 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bassem.weathernow.R
 import com.bassem.weathernow.adapters.WeeklyAdapter
-import com.bassem.weathernow.api.apiWeekly.Daily
-import com.bassem.weathernow.api.apiWeekly.WeeklyxxWeather
+import com.bassem.weathernow.api.API
+import com.bassem.weathernow.api.models.apiWeekly.Daily
+import com.bassem.weathernow.api.models.apiWeekly.WeeklyxxWeather
 import com.bassem.weathernow.databinding.WeekFragmentBinding
 import com.google.gson.GsonBuilder
 import okhttp3.*
@@ -27,11 +28,14 @@ class Week : Fragment(R.layout.week_fragment) {
     lateinit var weeklyRV: RecyclerView
     lateinit var weatherList: MutableList<Daily>
     lateinit var hourlyAdpter: WeeklyAdapter
+    val API_KEY = "b9eef1568d8d1cea6bb9549c7bda1bb9"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val sharedPreferences = activity?.getSharedPreferences("PREF", Context.MODE_PRIVATE)
         lat = sharedPreferences?.getString("lat", "")!!
         long = sharedPreferences.getString("lat", "")!!
+
     }
 
     override fun onCreateView(
@@ -48,59 +52,37 @@ class Week : Fragment(R.layout.week_fragment) {
         weeklyRV = view.findViewById(R.id.RvWeekly)
         weatherList = arrayListOf()
         rvSetup()
-        getCurrentWeather(lat, long)
+        getWeekly(lat, long)
     }
 
     fun rvSetup() {
-        hourlyAdpter = WeeklyAdapter(weatherList, context!!)
+        hourlyAdpter = WeeklyAdapter(weatherList, requireContext())
         weeklyRV.adapter = hourlyAdpter
         weeklyRV.setHasFixedSize(true)
         weeklyRV.layoutManager = LinearLayoutManager(context)
     }
 
-    fun getCurrentWeather(lat: String, long: String) {
-        val API_KEY = "b9eef1568d8d1cea6bb9549c7bda1bb9"
-        val currentWeatherUrl =
-            "https://api.openweathermap.org/data/2.5/onecall?lat=$lat&lon=$long&exclude=minutely,hourly&appid=$API_KEY&cnt=7&units=metric"
-        val client = OkHttpClient()
-        val request = Request.Builder().url(currentWeatherUrl).get().build()
-        Thread(Runnable {
-            client.newCall(request).enqueue(object : Callback {
-                override fun onFailure(call: Call, e: IOException) {
-                    println(e.message)
-                }
-
-                @RequiresApi(Build.VERSION_CODES.O)
-                override fun onResponse(call: Call, response: Response) {
-                    var result: String? = null
-                    if (!response.isSuccessful) {
-                        println("${response.message}=========ERROR")
-                    } else {
-                        val responseBody: ResponseBody? = response.body
-                        if (responseBody != null) {
-                            result = responseBody.string()
-
-                        }
-                        val gson = GsonBuilder().create()
-                        val weeklyWeather = gson.fromJson(result, WeeklyxxWeather::class.java)
-                        val apiList = weeklyWeather.daily
-                        for (weather in apiList) {
-                            weatherList.add(weather)
-                        }
-
-
-                        activity?.runOnUiThread {
-                            hourlyAdpter.notifyDataSetChanged()
-                              binding?.weeklyShimmer?.visibility = View.GONE
-                              binding?.weeklyLayout?.visibility = View.VISIBLE
-                        }
-
-
+    fun getWeekly(lat: String, long: String) {
+        val call = API.create().weeklyWeather(lat, long, "minutely,hourly", API_KEY, "7", "metric")
+        call.enqueue(object : retrofit2.Callback<WeeklyxxWeather?> {
+            override fun onResponse(
+                call: retrofit2.Call<WeeklyxxWeather?>,
+                response: retrofit2.Response<WeeklyxxWeather?>
+            ) {
+                val apiList = response.body()?.daily
+                if (apiList != null) {
+                    for (weather in apiList) {
+                        weatherList.add(weather)
                     }
-
+                    hourlyAdpter.notifyDataSetChanged()
+                    binding?.weeklyShimmer?.visibility = View.GONE
+                    binding?.weeklyLayout?.visibility = View.VISIBLE
                 }
-            })
-        }).start()
 
+            }
+
+            override fun onFailure(call: retrofit2.Call<WeeklyxxWeather?>, t: Throwable) {
+            }
+        })
     }
 }

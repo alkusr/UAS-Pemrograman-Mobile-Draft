@@ -1,4 +1,4 @@
-package com.bassem.weathernow.api.apiWeekly
+package com.bassem.weathernow.api.models.apiWeekly
 
 data class Daily(
     val clouds: Int,

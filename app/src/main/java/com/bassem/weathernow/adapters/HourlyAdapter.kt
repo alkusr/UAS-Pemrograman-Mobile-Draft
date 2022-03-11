@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.bassem.weathernow.R
-import com.bassem.weathernow.api.apiHourly.Hourly
+import com.bassem.weathernow.api.models.apiHourly.Hourly
 import com.bumptech.glide.Glide
 import java.time.Instant
 import java.time.ZoneId
@@ -18,6 +18,7 @@ import java.time.format.DateTimeFormatter
 import java.util.*
 
 class HourlyAdapter(val weatherList: MutableList<Hourly>,val context:Context) :
+
     RecyclerView.Adapter<HourlyAdapter.ViewHolder>() {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val time = itemView.findViewById<TextView>(R.id.timeHourly)

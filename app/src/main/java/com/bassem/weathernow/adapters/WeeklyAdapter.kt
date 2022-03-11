@@ -16,7 +16,7 @@ import java.time.Instant
 import java.time.ZoneId
 import java.util.*
 
-class WeeklyAdapter(val weatherList: MutableList<com.bassem.weathernow.api.apiWeekly.Daily>, val context:Context) :
+class WeeklyAdapter(val weatherList: MutableList<com.bassem.weathernow.api.models.apiWeekly.Daily>, val context:Context) :
     RecyclerView.Adapter<WeeklyAdapter.ViewHolder>() {
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val time = itemView.findViewById<TextView>(R.id.weeklyDate)

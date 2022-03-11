@@ -1,4 +1,4 @@
-package com.bassem.weathernow.api.apiHourly
+package com.bassem.weathernow.api.models.apiHourly
 
 data class HourlyWeather(
     val current: Current,

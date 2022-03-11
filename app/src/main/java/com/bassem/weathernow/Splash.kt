@@ -23,6 +23,7 @@ class Splash : AppCompatActivity(), EasyPermissions.PermissionCallbacks {
     fun goToContainer(){
         val intent = Intent(this,MainActivity::class.java)
         startActivity(intent)
+        finish()
     }
 
     override fun onPermissionsGranted(requestCode: Int, perms: MutableList<String>) {

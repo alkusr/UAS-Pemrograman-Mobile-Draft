@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
 import com.bassem.weathernow.adapters.PageViewerAdapter
+import com.bassem.weathernow.databinding.ActivityMainBinding
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator
 import com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
 import pub.devrel.easypermissions.EasyPermissions
@@ -13,12 +14,13 @@ import pub.devrel.easypermissions.EasyPermissions
 class MainActivity : AppCompatActivity() {
 
     lateinit var pager:ViewPager2
+    lateinit var binding:ActivityMainBinding
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
+        setContentView(R.layout.activity_main)
         pager=findViewById(R.id.viewpager)
         pager.adapter=PageViewerAdapter(this.supportFragmentManager,lifecycle)
         val dotsIndicator = findViewById<DotsIndicator>(R.id.dots_indicator)
@@ -30,5 +32,7 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+
 
 }

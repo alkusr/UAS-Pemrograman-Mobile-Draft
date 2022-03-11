@@ -1,4 +1,4 @@
-package com.bassem.weathernow.api.apiWeekly
+package com.bassem.weathernow.api.models.apiHourly
 
 data class Temp(
     val day: Double,
