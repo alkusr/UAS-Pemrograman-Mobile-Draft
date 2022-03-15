@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/currentCityContainer">
+
+    <fragment
+        android:id="@+id/currentCityContainer"
+        android:name="com.alkusr.weathernow.fragments.currentcity.CurrentCityContainer"
+        android:label="CurrentCityContainer" />
+    <fragment
+        android:id="@+id/otherCitiesFragment"
+        android:name="com.alkusr.weathernow.fragments.othercity.OtherCitiesFragment"
+        android:label="OtherCitiesFragment" />
+</navigation>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/current"
+        android:icon="@drawable/ic_baseline_my_location_24"
+        android:title="current" />
+    <item
+        android:id="@+id/other"
+        android:icon="@drawable/ic_baseline_location_city_24"
+        android:title="other" />
+    <item
+        android:id="@+id/settings"
+        android:title="Item" />
+</menu>

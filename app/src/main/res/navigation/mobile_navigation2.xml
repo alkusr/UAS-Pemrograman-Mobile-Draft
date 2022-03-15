@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation2"
+    app:startDestination="@+id/nav_current">
+
+    <fragment
+        android:id="@+id/nav_current"
+        android:name="com.alkusr.weathernow.fragments.currentcity.currentWeather.CurrentWeather"
+        android:label="@string/menu_home" />
+    <fragment
+        android:id="@+id/nav_hourly"
+        android:name="com.alkusr.weathernow.fragments.currentcity.hourlyWeather.HoursWeather"
+        android:label="HoursWeather" />
+    <fragment
+        android:id="@+id/nav_weekly"
+        android:name="com.alkusr.weathernow.fragments.currentcity.weekWeather.Week"
+        android:label="Week" />
+
+</navigation>

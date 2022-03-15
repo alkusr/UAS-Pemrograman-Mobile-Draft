@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "692812393195",
+    "project_id": "weathernow-e52e0",
+    "storage_bucket": "weathernow-e52e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:692812393195:android:8e8f6072c0f22de32d2cae",
+        "android_client_info": {
+          "package_name": "com.bassem.clinicdoctorapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "692812393195-trbuo5o1iq5b8l8ahh136hao7m5pqvd8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0RL5c86oS4l69Np_IFG_SlwWdcs8vym8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "692812393195-trbuo5o1iq5b8l8ahh136hao7m5pqvd8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

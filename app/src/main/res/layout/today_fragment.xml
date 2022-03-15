@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/swipe"
@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:background="@drawable/background"
     android:orientation="vertical">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -29,7 +28,7 @@
                 android:id="@+id/TvcityName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Cairo"
+                android:text="Nama Kota"
                 android:textAlignment="center"
                 android:textColor="@color/black"
                 android:textSize="48sp" />
@@ -66,284 +65,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/white" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="32dp" />
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="32dp" />
-
-            <androidx.gridlayout.widget.GridLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="8dp"
-                app:columnCount="3"
-                app:rowCount="2">
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:alpha=".5"
-                    android:visibility="visible"
-                    app:cardBackgroundColor="@color/black"
-                    app:cardCornerRadius="10dp"
-                    app:layout_gravity="center">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/textVsiew4"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="🌅"
-                            android:textAlignment="center"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/textViaew6"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="Sunrise"
-                            android:textAlignment="center"
-                            android:textColor="@color/white"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/TvSunRise"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="06:32 AM"
-                            android:textAlignment="center"
-                            android:textColor="@color/white" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:alpha=".5"
-                    app:cardBackgroundColor="@color/black"
-                    app:cardCornerRadius="10dp"
-                    app:layout_gravity="center">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="🌇"
-                            android:textAlignment="center"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/textaView6"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="Sunset"
-                            android:textAlignment="center"
-                            android:textColor="@color/white"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/TvSunSet"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="06:32 AM"
-                            android:textAlignment="center"
-                            android:textColor="@color/white" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:alpha=".5"
-                    app:cardBackgroundColor="@color/black"
-                    app:cardCornerRadius="10dp"
-                    app:layout_gravity="center">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/textqView4"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="💨"
-                            android:textAlignment="center"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/textVeiew6"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="Wind"
-                            android:textAlignment="center"
-                            android:textColor="@color/white"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/TvWind"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="06:32 AM"
-                            android:textAlignment="center"
-                            android:textColor="@color/white" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:alpha=".5"
-                    app:cardBackgroundColor="@color/black"
-                    app:cardCornerRadius="10dp"
-                    app:layout_gravity="center">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/tsextView4"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="💧"
-                            android:textAlignment="center"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="humidity"
-                            android:textAlignment="center"
-                            android:textColor="@color/white"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/Tvhumidity"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="06:32 AM"
-                            android:textAlignment="center"
-                            android:textColor="@color/white" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:alpha=".5"
-                    app:cardBackgroundColor="@color/black"
-                    app:cardCornerRadius="10dp"
-                    app:layout_gravity="center">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="🌡"
-                            android:textAlignment="center"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="Pressure"
-                            android:textAlignment="center"
-                            android:textColor="@color/white"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/TvPressure"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="06:32 AM"
-                            android:textAlignment="center"
-                            android:textColor="@color/white" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
-                    android:alpha=".5"
-                    app:cardBackgroundColor="@color/black"
-                    app:cardCornerRadius="10dp"
-                    app:layout_gravity="center">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:id="@+id/textView4"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="✔️"
-                            android:textAlignment="center"
-                            android:textSize="16sp" />
-
-                        <TextView
-                            android:id="@+id/textView6"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="Feels like"
-                            android:textAlignment="center"
-                            android:textColor="@color/white"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/TvFeel"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="8dp"
-                            android:text="06:32 AM"
-                            android:textAlignment="center"
-                            android:textColor="@color/white" />
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-            </androidx.gridlayout.widget.GridLayout>
         </LinearLayout>
 
         <com.facebook.shimmer.ShimmerFrameLayout
@@ -426,4 +148,6 @@
         </com.facebook.shimmer.ShimmerFrameLayout>
     </LinearLayout>
 
-</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>
