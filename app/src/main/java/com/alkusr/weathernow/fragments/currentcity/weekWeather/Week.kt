@@ -27,7 +27,6 @@ class Week : Fragment(R.layout.week_fragment) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
