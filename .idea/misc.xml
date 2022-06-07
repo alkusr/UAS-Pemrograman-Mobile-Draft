@@ -3,6 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UAS-Pemrograman-Mobile-Final/app/src/main/res/layout/activity_main2.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UAS-Pemrograman-Mobile-Final/app/src/main/res/layout/activity_splash.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UAS-Pemrograman-Mobile-Final/app/src/main/res/layout/app_bar_main2.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UAS-Pemrograman-Mobile-Final/app/src/main/res/layout/content_main2.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UAS-Pemrograman-Mobile-Final/app/src/main/res/layout/hourly_preview.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UAS-Pemrograman-Mobile-Final/app/src/main/res/layout/hourly_shimmer.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UAS-Pemrograman-Mobile-Final/app/src/main/res/layout/hours_fragment.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UAS-Pemrograman-Mobile-Final/app/src/main/res/layout/nav_header_main2.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UAS-Pemrograman-Mobile-Final/app/src/main/res/layout/shimmer_card.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UAS-Pemrograman-Mobile-Final/app/src/main/res/layout/shimmer_text.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UAS-Pemrograman-Mobile-Final/app/src/main/res/layout/today_fragment.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UAS-Pemrograman-Mobile-Final/app/src/main/res/layout/week_fragment.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UAS-Pemrograman-Mobile-Final/app/src/main/res/layout/weekly_preview.xml" value="0.22083333333333333" />
+        <entry key="..\:/Users/USER/AndroidStudioProjects/UAS-Pemrograman-Mobile-Final/app/src/main/res/layout/weekly_shimmer.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/UAS-Pemrograman-Mobile/app/src/main/res/drawable/shape.xml" value="0.1155" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/UAS-Pemrograman-Mobile/app/src/main/res/layout/activity_main2.xml" value="0.22083333333333333" />
         <entry key="..\:/Users/USER/AndroidStudioProjects/UAS-Pemrograman-Mobile/app/src/main/res/layout/activity_splash.xml" value="0.22083333333333333" />
