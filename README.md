@@ -6,14 +6,14 @@ Aplikasi UAS Pemrograman Mobile 2022
 - Muhammad Alkausar
 - Ferry Roland
 
-#Installation
+# Installation
 1. Clone project ini lewat android studio version control
 2. Build Project
 3. Pastikan emulator sudah aktif atau sudah menghubungkan perangkat keras anda ke komputer atau laptop
-4. Lakukan "run pada project
+4. Lakukan "run pada project"
 5. Aplikasi akan tampil dan berjalan pada layar
 
-#Fitur
+# Fitur
 - Menampilkan cuaca sekarang untuk wilayah banjarmasin
 - Menampilkan cuaca per-jam wilayah banjarmasin hari ini
 - Menampilkan cuaca per-hari wilayah banjarmasin minggu ini
