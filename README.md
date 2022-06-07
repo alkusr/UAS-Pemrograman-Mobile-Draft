@@ -2,9 +2,9 @@
 
 Aplikasi UAS Pemrograman Mobile 2022
 [Cuaca | Sekarang, Per-Jam, Per-Hari]
-- Ahmad Dany Adrian
-- Muhammad Alkausar
-- Ferry Roland
+- Ahmad Dany Adrian (2010817210019)
+- Muhammad Alkausar (2010817210008)
+- Ferry Roland (2010817210016)
 
 # Installation
 1. Clone project ini lewat android studio version control
