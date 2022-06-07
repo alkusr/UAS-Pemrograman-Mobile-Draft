@@ -12,6 +12,7 @@
         android:orientation="vertical"
         android:visibility="gone">
 
+
         <TextView
             android:id="@+id/textView15"
             android:layout_width="match_parent"
