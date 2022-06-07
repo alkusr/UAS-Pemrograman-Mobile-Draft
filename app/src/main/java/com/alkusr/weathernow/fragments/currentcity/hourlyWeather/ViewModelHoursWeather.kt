@@ -13,7 +13,6 @@ class ViewModelHoursWeather(app: Application) : AndroidViewModel(app) {
 
 
 
-
     fun getHourly(lat: String, long: String) {
         val apiCall = ServiceAPI.create().hourlyWeather(lat, long, "minutes", API_KEY, "metric")
         apiCall.enqueue(object : retrofit2.Callback<HourlyWeather?> {
