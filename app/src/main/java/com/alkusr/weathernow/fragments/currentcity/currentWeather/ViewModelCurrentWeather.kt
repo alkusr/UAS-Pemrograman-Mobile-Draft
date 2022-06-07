@@ -18,7 +18,6 @@ class ViewModelCurrentWeather(application: Application) :
 
 
 
-
     fun getCurrentWeather(valueLat: String, valueLong: String) {
         val api = ServiceAPI.create()
             .currentWeather("weather", valueLat, valueLong, API_KEY, "metric")
