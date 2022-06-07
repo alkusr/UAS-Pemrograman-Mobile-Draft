@@ -24,6 +24,7 @@ class HourlyAdapter(var weatherList: List<Hourly>, val context: Context) :
         val time = itemView.findViewById<TextView>(R.id.timeHourly)
         val temp = itemView.findViewById<TextView>(R.id.tempHourly)
         val icon = itemView.findViewById<ImageView>(R.id.iconHourly)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
