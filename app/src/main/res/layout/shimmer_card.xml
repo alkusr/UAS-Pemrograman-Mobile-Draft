@@ -15,6 +15,7 @@
         app:cardCornerRadius="10dp"
         app:layout_gravity="center">
 
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
