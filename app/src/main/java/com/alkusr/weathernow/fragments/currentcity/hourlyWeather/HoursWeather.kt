@@ -17,6 +17,7 @@ import com.alkusr.weathernow.databinding.HoursFragmentBinding
 
 class HoursWeather : Fragment(R.layout.hours_fragment) {
 
+
     var _binding: HoursFragmentBinding? = null
     val binding get() = _binding
     private val lat = "-3.316694"
