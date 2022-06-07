@@ -6,7 +6,6 @@
     android:layout_marginRight="64dp"
     android:orientation="vertical">
 
-
     <Space
         android:layout_width="match_parent"
         android:layout_height="100dp" />
