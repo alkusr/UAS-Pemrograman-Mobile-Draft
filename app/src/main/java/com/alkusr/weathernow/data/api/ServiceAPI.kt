@@ -11,7 +11,6 @@ import retrofit2.http.Query
 
 interface ServiceAPI {
 
-
     @GET("weather")
     fun currentWeather(
         @Query("weather") weather: String,
