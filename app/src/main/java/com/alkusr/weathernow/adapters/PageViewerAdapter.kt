@@ -11,8 +11,6 @@ import com.alkusr.weathernow.fragments.currentcity.weekWeather.Week
 open class PageViewerAdapter(fragmentManager: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fragmentManager, lifecycle) {
     override fun getItemCount(): Int {
-
-
         return 3
     }
 
