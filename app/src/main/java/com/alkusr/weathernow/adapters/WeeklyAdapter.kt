@@ -25,9 +25,7 @@ class WeeklyAdapter(var weatherList: List<Daily>, val context: Context) :
         val tempMin = itemView.findViewById<TextView>(R.id.weeklyMin)
         val desc = itemView.findViewById<TextView>(R.id.weeklyDesc)
 
-
         val icon = itemView.findViewById<ImageView>(R.id.weeklyIcon)
-
 
     }
 
