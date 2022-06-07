@@ -15,7 +15,6 @@ class ViewModelWeekWeather(app: Application) : AndroidViewModel(app) {
     val weekList = MutableLiveData<List<Daily>>()
 
 
-
     fun getWeek(lat: String, long: String) {
 
         val api =
