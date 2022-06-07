@@ -26,6 +26,7 @@ class CurrentWeather : Fragment(R.layout.today_fragment) {
     private val long = "114.590111"
 
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
